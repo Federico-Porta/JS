@@ -2,232 +2,165 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jordan Store UY - Catalogo de Productos exclusivos de Jordans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=.85">
+
+    <title>Jordan Store UY - Top vendidos</title>
     <meta name="author" content="Federico Porta" />
     <meta name="copyright" content="Federico Porta" />
-    <meta name="description" content="Deleita tus ojos con productos Nike-Jordan exlusivos y diseños particularmente hermosos">
+    <meta name="description" content="Conoce las zapatillas que hicieron volar a Jordan, Con su toque distinto de diseñadores exlusivos">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="./main.js"></script>
-    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
 
 
 </head>
   <body>
     <!-- comienza Nav-->
-    <nav class="navbar navbar-expand-lg card-body">
+    <nav class="navbar navbar-expand-lg card-body ">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html"><img class="logo" src="../img/logo.png" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="index.html"><img class="logo" src="img/logo.png" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#boton-menu" aria-controls="boton-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
 
-          <div class="collapse navbar-collapse" id="navbarNavDropdown2">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse" id="boton-menu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="catalogo.html">Catalogo</a>
+                <a class="nav-link" aria-current="page" href="vw/catalogo.html">Catalogo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="carrito.html">Carrito</a>
+                <a class="nav-link " href="vw/carrito.html">Carrito</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="producto.html">Producto</a>
+                <a class="nav-link" href="vw/producto.html">Producto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="nosotros.html">Nosotros</a>
+                <a class="nav-link" href="vw/nosotros.html">Nosotros</a>
               </li>
               <!-- desplegable en XL-->
-              
+               
             </ul>
           </div>
         </div>
       </nav>
       <!-- termina Nav-->
 
-      <h1 class="titulos">Productos</h1>
+      <div class="carru col-md-8 col-s-12 container-fluid">
+        <div id="carruselhero" class="carousel slide" data-bs-touch="false">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img src="img/jordan-air-blancas.webp" class="d-block w-100" alt="jordan-air-blancas en Bloque blanco.">
+              </div>
+              <div class="carousel-item">
+                  <img src="img/Jordan air 1 Black.webp" class="d-block w-100" alt="Jordan air 1 Black sobre Pelota.">
+              </div>
+              <div class="carousel-item">
+                <img src="img/Jordan 1 blancas y rojas en piso.webp" class="d-block w-100" alt="Jordan 1 blancas y rojas en piso.">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselhero" data-bs-slide="prev">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselhero" data-bs-slide="next">
+            </button>
+        </div>
+    </div>
 
-    <section class="contenido col-md-12 ">
-        <article class="col-md-6 contenido ">
-            <div class="row card col-md-5">
-                <div class="col-md-12">
-                  
-                        <div class="input-group mb-3 col-md-4">
-                            <label class="input-group-text" for="select-modelo">Modelo</label>
-                            <select class="form-select" id="select-modelo">
-                                <option selected>Todos</option>
-                                <option value="1">Air Jordan I</option>
-                                <option value="2">Air Jordan II</option>
-                                <option value="3">Air Jordan III</option>
-                                <option value="3">Air Jordan IV</option>
-                            </select>
-                        </div>
-                       <h6>Color</h6> 
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-blanco" value="option1">
-                        
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-rojo" value="option2">
-                        
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-azul" value="option3" >
-                        
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-verde" value="option1">
-                
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-negro" value="option2">
-                        
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color-otro" value="option3" >
-                        
-                        </div>
+    <h1 class="titulos">Top 3 Mundial</h1>
 
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="select-talle">Talle</label>
-                            <select class="form-select" id="select-talle">
-                                <option selected>Elige tu talle</option>
-                                <option value="1">37</option>
-                                <option value="2">38</option>
-                                <option value="3">39</option>
-                                <option value="3">40</option>
-                            </select>
-                            <a href="#" class="btn btn-search">Buscar</a>
-                        </div>
-                    </div> 
-                </div>
-            </div>  
-        </article>
-    </section>
-
-
-
-      <section class="contenido">
-
-       
-
- 
-        <div class="row col-md-8">
-           
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      <a href="producto.html">
-                        <img src="/img/Joedan 1 x Off White.webp" class="d-block w-100" alt="Jordan 1 x Off White">
-                      </a>
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan 1 x Off White</h5>
+    <section class="contenido">
+        <article class="col-md-7">
+          <div class="row card col-md-12" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="vw/producto.html">
+                  <img src="img/Joedan 1 x Off White.webp" class="d-block w-100" alt="Jordan 1 x Off White">
+                </a> 
+             </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Air Jordan 1 x Off White NSA</h4>
                     <p class="card-text">Estas Jordans fueron diseñadas por el famoso diseñador Robert L. Doski oriundo de las islas perdidas de alkatraz en honor a los astronautas que llegaron a marte en julio de 2022</p>
                     <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
+                    <a href="#" class="btn btn-secondary">Añadir al carro</a>
                 </div>
+              </div>
             </div>
+          </div>
+          
+          
+          <div class="row card col-md-12" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="vw/producto TS.html">
+                  <img src="img/jordan 1 travis scott.webp" class="d-block w-100" alt="Jordan 1 travis scott">
+                </a> 
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Air Jordan 1 travis scott</h4>
+                    <p class="card-text">Un pedido especial para el famoso cantante de Rap Travis Scott se volvio viral en las redes y hoy es una zapatilla que rompe taquilla</p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <a href="#" class="btn btn-secondary">Añadir al carro</a>
+                </div>
+              </div>
+            </div>
+          </div> 
 
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      <a href="producto.html">
-                        <img src="/img/jordan 4 Fire Red.webp" class="d-block  w-100" alt="Jordan 4 Fire Red">
-                      </a>
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan 4 Fire Red</h5>
+
+          <div class="row card col-md-12" >
+            <div class="row g-0">
+              <div class="col-md-4">
+                <a href="vw/producto-fire-red.html">
+                  <img src="img/jordan 4 Fire Red.webp" class="d-block w-100 img-prd"  alt="Jordan IV Fire Red">
+                </a>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Jordan IV Fire Red</h4>
                     <p class="card-text">"Fuego Rojo", referencia a la pelicula el infierno en el cielo, en la que Tom Crouse vuela con un cable de acero por encima de las llamas 
                       y el magma ardiente para salvar a 
                       Lillian J. Rose. los colores hacen referencia a la magma, el cable y la cara de Lillian al tener que saltar de semejante altura para salvarse.</p>
-                  <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
+                      <div class="botones"><a href="#" class="btn btn-primary">Comprar</a>
+                    <a href="#" class="btn btn-secondary">Añadir al carro</a></div>
+                    
                 </div>
+              </div>
             </div>
+          </div>
 
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      <a href="producto.html">
-                        <img src="../img/air jordan IV blanco y negro.webp" class="d-block w-100" alt="Jordan IV blanco y negro">
-                      </a>
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan IV blanco y negr</h5>
-                    <p class="card-text">Una simple forma de pasar desapersivido sin perder el estilo y la comodidad que te puede brindar la marca, nadie va a mirar tus zapatillas por su colorida paleta, pero si lo haras tu por parecer que caminas sobre las nubes</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
-                </div>
-            </div>
+            
+        </article>
+      </section>
 
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      <a href="producto.html">
-                        <img src="/img/Dior Game ready.webp" class="d-block w-100" alt="Jordan Dior Game ready">
-                      </a>
+      <section class="contenido">
+        <article class="col-md-10">
+            <div class="row card col-md-12" >
+                <div ><h3 class="titulos">Nuestro Local</h3></div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2314.385895042304!2d-56.14948752391057!3d-34.88044427810864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80f0fced12dd%3A0x4357cbe91da31d9b!2sNike%20Factory!5e0!3m2!1ses-419!2suy!4v1673657526197!5m2!1ses-419!2suy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan Dior Game ready</h5>
-                        <p class="card-text">Game Ready es una Colaboracion de la Marca Dior con Jordan para patrocinar su apoyo al deporte Femenino que viene en alsa y dejar en claro que las mujeres tambien se pueden calzar zapatillas</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
-                </div>
-            </div>
+                  </div>
+        </article>
+      </section>
 
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      <a href="producto.html">
-                         <img src="/img/air jordan IV pink.webp" class="d-block w-100" alt="Jordan IV pink">
-                      </a>
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan IV pink</h5>
-                      <p class="card-text">Como sabemos las Jordan ya no son unicamente para el Basquet, por lo que la marca lanzo estas Jordas "Pink" las cuales fueron usadas por el grupo de K-pop "BACKPINK" en el estreno de su gira mundial por europa. estas jordans estan hechas para sentir el ritmo.</p>
-                  <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 masvendido-producto">
-                <div class="card" >
-                    <div>
-                      
-                      <a href="producto.html">
-                        <img src="/img/jordan 1 travis scott.webp" class="d-block w-100" alt="Jordan travis scott">
-                      </a> 
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">Jordan travis scott</h5>
-                    <p class="card-text">Un pedido especial para el famoso cantante de Rap Travis Scott se volvio viral en las redes y hoy es una zapatilla que rompe taquilla</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
-                  <a href="#" class="btn btn-secondary">Añadir al carro</a>
-                    </div>
-                </div>
+      <section class="col-md-12 hero">
+        <div class="col-md-12"> 
+            <div class="col-md-12"><iframe id="frm" title="Nike Air Jordan 4 Variety Pack" 
+         src="https://sketchfab.com/models/12bed79f58014290baa9baca711f66b7/embed"> 
+            </iframe>
             </div>
         </div>
+      </section>
+    
+    <footer class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright: Federico Porta
+        <br><a class="text-dark" href="index.html">volver arriba</a>
+      </div>
+    </footer>
 
-        </section>
 
-       
-
-        <footer class="bg-light text-center text-lg-start">
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2023 Copyright: Federico Porta
-              <a class="text-dark" href="catalogo.html">volver arriba</a>
-            </div>
-          </footer>
-          
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-         
-
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>
