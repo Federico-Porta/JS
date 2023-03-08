@@ -1,0 +1,43 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Kanit:wght@100&display=swap');
+
+$mainFont:'Fjalla One', sans-serif;
+$secondaryFont: 'Kanit', sans-serif;
+
+$textBold:600;
+$textRegular:400;
+$textThin:200;
+
+//size
+$larger:larger;
+$medium:medium;
+$small:small;
+
+.title{
+    color: map-get($map: $paleta, $key:titles);
+    font-family: $mainFont;
+    
+}
+
+
+
+.h{
+    display: flex;
+    justify-content: center;
+    padding:20px ;
+    text-align: center;
+}
+
+.titulos{
+    @extend .h;
+    @extend .title;
+  
+}
+@mixin titles($size,$color){
+    font-size: $size;
+    color: $color;
+    font-family: $mainFont;
+    padding: 10px;
+}
