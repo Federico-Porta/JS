@@ -174,4 +174,15 @@ iframe {
   text-align: center;
 }
 
+#carro {
+  width: 70px;
+  margin-right: 25px;
+  transform: rotate(6deg);
+}
+
+.descripcion{
+  font-size: 40px;  
+}
+
+
 /*# sourceMappingURL=main.css.map */
