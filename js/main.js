@@ -185,6 +185,8 @@ function cargarrelacionados(){
 function calcularcarrito(total,descuento){
     return (total*((100-descuento)/100));
   }
+
+
   function checkout(){
     let tarjetas = document.getElementById("tarjetas")
     let selectPagos = document.createElement("select");
@@ -230,16 +232,20 @@ function terminarcompra() {
 }
 
   
-
+function vercarrito(){
+    document.getElementById("cantidadcarrito").innerHTML =carrito.length;
+}
 
 
 function bienvenido(){
 if (document.getElementById("productos")) {
-    traerproductos()
+    traerproductos();
+    vercarrito();
 } else if (document.getElementById("salida")) {
    cargarcarrito();
+   vercarrito();
    cargarrelacionados();
-checkout();}
+    checkout();}
 }
 
 
