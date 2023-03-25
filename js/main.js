@@ -214,7 +214,7 @@ function calcularcarrito(total,descuento){
 
     let btnTerminarCompra = document.createElement("button");
 btnTerminarCompra.innerText = "Terminar compra";
-btnTerminarCompra.classList.add("btn-primary"); // Agregar clase
+btnTerminarCompra.classList.add("btn-primary"); 
 btnTerminarCompra.onclick = function() {
     terminarcompra();
 };
