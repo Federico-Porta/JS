@@ -23,7 +23,7 @@ const productoss = document.getElementById('productos');
 function compradirecta(id){
     
     addcarro(id);
-    window.location.href = "/JS/vw/carrito.html";
+    window.location.href = "../vw/carrito.html";
  
   
 
@@ -233,7 +233,8 @@ function terminarcompra() {
 
   
 function vercarrito(){
-    document.getElementById("cantidadcarrito").innerHTML =carrito.length;
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if(carrito)document.getElementById("cantidadcarrito").innerHTML =carrito.length;
 }
 
 
