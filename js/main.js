@@ -23,8 +23,8 @@ const productoss = document.getElementById('productos');
 function compradirecta(id){
     
     addcarro(id);
-    window.location.href = "/vw/carrito.html";
-  
+    window.location.href = "/JS/vw/carrito.html";
+ 
   
 
 }
