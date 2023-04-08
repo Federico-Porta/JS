@@ -115,7 +115,7 @@ async function cargarrelacionados(){
     let carga =document.getElementById("relacionados")
     let data = [];
 
-    const response = await fetch("./datos.json");
+    const response = await fetch("/JS/js/datos.json");
      data = await response.json();
 
    
@@ -147,7 +147,7 @@ async function cargarrelacionados(){
 
     let data = [];
 
-    const response = await fetch("./datos.json");
+    const response = await fetch("/JS/js/datos.json");
      data = await response.json();
 
     let tarjetas = document.getElementById("tarjetas")
@@ -165,7 +165,7 @@ async function cargarrelacionados(){
 
       let data = [];
 
-      const response = await fetch("./datos.json");
+      const response = await fetch("/JS/js/datos.json");
        data = await response.json();
        
         let descuento = document.getElementById("descuento");
@@ -239,7 +239,7 @@ async function traerproductos() {
     let carga = document.getElementById("productos");
     let data = [];
 
-    const response = await fetch("./datos.json");
+    const response = await fetch("/JS/js/datos.json");
      data = await response.json();
 
    
@@ -301,7 +301,7 @@ async function buscar(tipo, id) {
 
   let data = [];
 
-  const response = await fetch("./datos.json");
+  const response = await fetch("/JS/js/datos.json");
    data = await response.json();
    
         let objeto;
