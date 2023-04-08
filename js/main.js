@@ -1,23 +1,21 @@
 
-let productos = [
-    { id: 1, nombre: "Air Jordan 1 x Off White NSA", precio: 8990, stock:3, descripcion: "Estas Jordans fueron diseñadas por el famoso diseñador Robert L. Doski oriundo de las islas perdidas de alkatraz en honor a los astronautas que llegaron a marte en julio de 2022", Cantidadcompradas:501, imagen: "Joedan 1 x Off White" },
-    { id: 2, nombre: "Jordan IV Fire Red", precio: 7990, stock:1, descripcion: "Fuego Rojo, referencia a la pelicula el infierno en el cielo, en la que Tom Crouse vuela con un cable de acero por encima de las llamas y el magma ardiente para salvar a Lillian J. Rose. los colores hacen referencia a la magma, el cable y la cara de Lillian al tener que saltar de semejante altura para salvarse.", Cantidadcompradas:500, imagen: "jordan 4 Fire Red"},  
-    { id: 3, nombre: "Jordan IV blanco y negro", precio: 7000, stock:20, descripcion: "Una simple forma de pasar desapersivido sin perder el estilo y la comodidad que te puede brindar la marca, nadie va a mirar tus zapatillas por su colorida paleta, pero si lo haras tu por parecer que caminas sobre las nubes", Cantidadcompradas:203, imagen: "air jordan IV blanco y negro" },
-    { id: 4, nombre: "Jordan Dior Game ready", precio: 7990, stock:1, descripcion: "Game Ready es una Colaboracion de la Marca Dior con Jordan para patrocinar su apoyo al deporte Femenino que viene en alsa y dejar en claro que las mujeres tambien se pueden calzar zapatillas", Cantidadcompradas:500, imagen: "Dior Game ready"},
-    { id: 5, nombre: "Jordan IV pink", precio: 7990, stock:1, descripcion: "Como sabemos las Jordan ya no son unicamente para el Basquet, por lo que la marca lanzo estas Jordas 'Pink' las cuales fueron usadas por el grupo de K-pop 'BACKPINK' en el estreno de su gira mundial por europa. estas jordans estan hechas para sentir el ritmo.", Cantidadcompradas:500, imagen: "air jordan IV pink"},
-    { id: 6, nombre: "Air Jordan 1 travis scott", precio: 6500, stock: 12, descripcion: "Un pedido especial para el famoso cantante de Rap Travis Scott se volvio viral en las redes y hoy es una zapatilla que rompe taquilla", Cantidadcompradas:503, imagen: "jordan 1 travis scott" },
-  ];
 
-let pagos = [
-    {id: 1, nombre: "Efectivo", descuento: 0},
-    {id: 2, nombre: "Santander", descuento: 25},
-    {id: 3, nombre: "Itau", descuento: 30},
-    {id: 4, nombre: "OCA", descuento: 15},
 
-]
 
-let salida="";
-const productoss = document.getElementById('productos');
+
+
+
+
+
+
+
+
+
+
+
+
+const productos = [];
+const tarjetas = [];
 
 
 function compradirecta(id){
@@ -43,28 +41,6 @@ function actualizarNumero() {
   
 }
 
-
-function traerproductos(){
-    let carga =document.getElementById("productos")
-
-    productos.forEach((item) => {
-        salida+='<div class="col-md-4 masvendido-producto">'+
-     '<div class="card" ><div>'+
-           '<a href="producto.html">'+
-             '<img src="img/'+item.imagen+'.webp" class="d-block w-100" alt="'+item.nombre+'">'+
-           '</a> </div>'+
-         '<div class="card-body">'+
-         '<h5 '+item.nombre+'</h4><span class="badge rounded-pill" id="cantidadcarrito"> $ '+item.precio+'</span></h5>'+
-         "<h6 class='card-text'>"+item.descripcion+'</h6>'+
-         "<a href='#' class='btn btn-primary' onclick='compradirecta(" + item.id + ")'>Comprar</a>"+
-         "<a href='#' class='btn btn-secondary' onclick='addcarro(" + item.id + ")'>Añadir al carro</a>"+
-         '</div></div></div>'
-      });
-
-     carga.innerHTML = salida;
-
-
-};
 
 function cargarcarrito() {
     let carrito = JSON.parse(localStorage.getItem('carrito'));
@@ -111,100 +87,92 @@ function listaagregados(id){
 
 }
 
-function addcarro(id){
+async function addcarro(id){
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    let producto= buscar(productos,id);
+    let producto= await buscar("producto",id);
 
         if (producto){
-            if (validarstock(producto.id, 1)){
+            if (validarstock(producto, 1)){
                 if (listaagregados(producto.id)){
-                    console.log("EL PRODUCTO YA ESTA EN EL CARRO")
-                } else   carrito.push(producto);
-                document.getElementById("cantidadcarrito").innerHTML =carrito.length;
+                    mensajealerta("warning","El producto "+producto.nombre+" ya se encuentra en el carro, si desea agregar otro del mismo producto dirijase al carro")
+                } else  {
+                  mensajealerta("success","GENIAL! hemos agregado unos "+producto.nombre+" a tu carro")
+                 carrito.push(producto);
+                document.getElementById("cantidadcarrito").innerHTML =carrito.length;}
                 
-            }else console.log("NO Hay Stock")
+            }else mensajealerta("error","No hay suficiente stock : "+producto.stock)
             
-        }else console.log("el producto no existe");
+        }else mensajealerta("error","El producto no existe")
     localStorage.setItem("carrito", JSON.stringify(carrito));
     
 }
-function validarstock(producto,cantidad) {
-    let salida= buscar(productos,producto);
-        if(salida.stock>=cantidad){
-          return true;
-        }
-    return false;
-}
 
-function buscar(item,id){
-   
-    if (id) {
-       
-        let buscador=(item.find(item => item.id == id))
+function validarstock(producto,cantidad) { return producto.stock >= cantidad ? true:false }
 
-        if(buscador){return buscador; }
-    }
-    else{
-        let salida = "";
-            for (let i = 0; i < item.length; i++) {
-                for(let clave in item[i]) {
-                    salida += `${clave}: ${item[i][clave]}\n`;
-  }
-  salida += "\n";
-}
-return(salida);
-    }
-}
 
-function cargarrelacionados(){
+async function cargarrelacionados(){
     let carga =document.getElementById("relacionados")
-    let relacionado="";
-  
-        for(x=0; x<3; x++){
-        
-        relacionado+='<div class="col-md-4 masvendido-producto">'+
-     '<div class="card" ><div>'+
-           '<a href="producto.html">'+
-             '<img src="../img/'+productos[x].imagen+'.webp" class="d-block w-100" alt="'+productos[x].nombre+'">'+
-           '</a> </div>'+
-         '<div class="card-body">'+
-         '<h5 '+productos[x].nombre+'</h4><span class="badge rounded-pill" id="cantidadcarrito"> $ '+productos[x].precio+'</span></h5>'+
-         "<h6 class='card-text'>"+productos[x].descripcion+'</h6>'+
-        
-         "<a href='#' class='btn btn-secondary' onclick='compradirecta(" + productos[x].id + ")'>Añadir al carro</a>"+
-         '</div></div></div>'
-      };
+    let data = [];
 
+    const response = await fetch("../datos.json");
+     data = await response.json();
 
-     carga.innerHTML = relacionado;
+   
+    carga.innerHTML = "";
+
+    for(let item =0; item<3; item++)
+    {
+        let salida = '<div class="col-md-4 masvendido-producto">' +
+            '<div class="card" ><div>' +
+            '<img src="../img/' + data.productos[item].imagen + '.webp" class="d-block w-100" alt="' + data.productos[item].nombre + '">' +
+            '</a> </div>' +
+            '<div class="card-body">' +
+            '<h5>' + data.productos[item].nombre + '</h4><span class="badge rounded-pill" id="cantidadcarrito"> $ ' + data.productos[item].precio + '</span></h5>' +
+            "<h6 class='card-text'>" + data.productos[item].descripcion + '</h6>' +
+            "<a href='#' class='btn btn-primary' onclick='compradirecta(" + data.productos[item].id + ")'>Comprar</a>" +
+            '</div></div></div>';
+        carga.innerHTML += salida;
+    };
 
 }
 
 
-function calcularcarrito(total,descuento){
+ function calcularcarrito(total,descuento){
     return (total*((100-descuento)/100));
   }
 
 
-  function checkout(){
+ async function checkout(){
+
+    let data = [];
+
+    const response = await fetch("../datos.json");
+     data = await response.json();
+
     let tarjetas = document.getElementById("tarjetas")
     let selectPagos = document.createElement("select");
-    selectPagos.id = "select-pagos";
+    selectPagos.id = "select-pagos";   
 
-    pagos.forEach(pago => {
+    data.pagos.forEach(pago => {
         let option = document.createElement("option");
         option.value = pago.id;
         option.text = pago.nombre;
         selectPagos.appendChild(option);
     });
 
-    selectPagos.addEventListener("change", function() {
+    selectPagos.addEventListener("change", async function() {
+
+      let data = [];
+
+      const response = await fetch("../datos.json");
+       data = await response.json();
+       
         let descuento = document.getElementById("descuento");
         let subtotal = parseInt(document.getElementById("total").textContent);
 
         let selectedOption = this.options[this.selectedIndex];
-        let selectedPago = pagos.find(pago => pago.id == selectedOption.value);
+        let selectedPago = data.pagos.find(pago => pago.id == selectedOption.value);
 
         let total=(calcularcarrito(subtotal,selectedPago.descuento));
         descuento.innerHTML = "tu descuento es de: "+ selectedPago.descuento+"%<br>ahorrandote $"+(subtotal-total)+"<br>TOTAL: $"+total;
@@ -218,18 +186,46 @@ function calcularcarrito(total,descuento){
     let btnTerminarCompra = document.createElement("button");
 btnTerminarCompra.innerText = "Terminar compra";
 btnTerminarCompra.classList.add("btn-primary"); 
-btnTerminarCompra.onclick = function() {
-    terminarcompra();
+btnTerminarCompra.onclick = async function() {
+    
+terminarcompra()
+
 };
 tarjetas.appendChild(btnTerminarCompra);;
 }
 
-function terminarcompra() {
+async function terminarcompra() {
+  let aprov = false;
+  await Swal.fire({
+    title: 'Confirmar compra',
+    text: "Te llevas todo lo que buscabas? ¿Necesitas dar un último vistazo?",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'SI, me lo llevo!',
+    cancelButtonText: 'Quiero seguir comprando'
+  }).then((result) => {
+    if (result.isConfirmed) {
+       Swal.fire({
+        title: 'compra confirmada',
+        text: "esperemos que disfrutes tus zapas como nosotros venderlas. Gracias por elegirnos",
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Volver al inicio',
+        
+      }).then((result)=>{
+          if (result.isConfirmed) {
     localStorage.clear();
-    alert("Tu compra ha sido finalizada");
     window.location.href = "../index.html";
-
+           
+          }
+        })
+  }});
 }
+
 
   
 function vercarrito(){
@@ -238,16 +234,86 @@ function vercarrito(){
 }
 
 
-function bienvenido(){
-if (document.getElementById("productos")) {
-    traerproductos();
-    vercarrito();
-} else if (document.getElementById("salida")) {
-   cargarcarrito();
-   vercarrito();
-   cargarrelacionados();
-    checkout();}
+
+async function traerproductos() {
+    let carga = document.getElementById("productos");
+    let data = [];
+
+    const response = await fetch("../datos.json");
+     data = await response.json();
+
+   
+    carga.innerHTML = "";
+
+    for(let item =0; data.productos.length; item++)
+    {
+        let salida = '<div class="col-md-4 masvendido-producto">' +
+            '<div class="card" ><div>' +
+            '<img src="img/' + data.productos[item].imagen + '.webp" class="d-block w-100" alt="' + data.productos[item].nombre + '">' +
+            '</a> </div>' +
+            '<div class="card-body">' +
+            '<h5>' + data.productos[item].nombre + '</h4><span class="badge rounded-pill" id="cantidadcarrito"> $ ' + data.productos[item].precio + '</span></h5>' +
+            "<h6 class='card-text'>" + data.productos[item].descripcion + '</h6>' +
+            "<a href='#' class='btn btn-primary' onclick='compradirecta(" + data.productos[item].id + ")'>Comprar</a>" +
+            "<a href='#' class='btn btn-secondary' onclick='addcarro(" + data.productos[item].id + ")'>Añadir al carro</a>" +
+            '</div></div></div>';
+        carga.innerHTML += salida;
+    };
+};
+
+    
+function mensajealerta(icono,mensaje){
+  Swal.fire({
+    position: 'top-center',
+    icon: ''+icono+'',
+    title: ''+mensaje+'',
+    showConfirmButton: false,
+    timer: 2000
+  })
 }
 
 
-bienvenido();
+function bienvenido(){
+
+    if (document.getElementById("productos")) {
+        traerproductos();
+        vercarrito();
+    } else if (document.getElementById("salida")) {
+       cargarcarrito();
+       vercarrito();
+       cargarrelacionados();
+        checkout();}
+    }
+    
+    function agregadoAlCarrito(){
+      Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500
+      })}
+      
+  
+
+
+async function buscar(tipo, id) {
+
+  let data = [];
+
+  const response = await fetch("../datos.json");
+   data = await response.json();
+   
+        let objeto;
+        if (tipo == 'producto') {
+          objeto = data.productos.find(producto => producto.id == id);
+          
+        } else if (tipo == 'tarjeta') {
+          objeto = data.tarjetas.find(tarjeta => tarjeta.id == id);
+        }
+        
+       return(objeto)
+      ;
+  }
+  bienvenido();
+

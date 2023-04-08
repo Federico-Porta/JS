@@ -1,0 +1,17 @@
+{ "productos" : [
+    { "id": 1, "nombre": "Air Jordan 1 x Off White NSA", "precio": 8990, "stock":3, "descripcion": "Estas Jordans fueron diseñadas por el famoso diseñador Robert L. Doski oriundo de las islas perdidas de alkatraz en honor a los astronautas que llegaron a marte en julio de 2022", "Cantidadcompradas":501, "imagen": "Joedan 1 x Off White" },
+    { "id": 2, "nombre": "Jordan IV Fire Red", "precio": 7990, "stock":1, "descripcion": "Fuego Rojo, referencia a la pelicula el infierno en el cielo, en la que Tom Crouse vuela con un cable de acero por encima de las llamas y el magma ardiente para salvar a Lillian J. Rose. los colores hacen referencia a la magma, el cable y la cara de Lillian al tener que saltar de semejante altura para salvarse.", "Cantidadcompradas":500, "imagen": "jordan 4 Fire Red"},  
+    { "id": 3, "nombre": "Jordan IV blanco y negro", "precio": 7000, "stock":20, "descripcion": "Una simple forma de pasar desapersivido sin perder el estilo y la comodidad que te puede brindar la marca, nadie va a mirar tus zapatillas por su colorida paleta, pero si lo haras tu por parecer que caminas sobre las nubes", "Cantidadcompradas":203, "imagen": "air jordan IV blanco y negro" },
+    { "id": 4, "nombre": "Jordan Dior Game ready", "precio": 7990, "stock":1, "descripcion": "Game Ready es una Colaboracion de la Marca Dior con Jordan para patrocinar su apoyo al deporte Femenino que viene en alsa y dejar en claro que las mujeres tambien se pueden calzar zapatillas", "Cantidadcompradas":500, "imagen": "Dior Game ready"},
+    { "id": 5, "nombre": "Jordan IV pink", "precio": 7990, "stock":1, "descripcion": "Como sabemos las Jordan ya no son unicamente para el Basquet, por lo que la marca lanzo estas Jordas 'Pink' las cuales fueron usadas por el grupo de K-pop 'BACKPINK' en el estreno de su gira mundial por europa. estas jordans estan hechas para sentir el ritmo.", "Cantidadcompradas":500, "imagen": "air jordan IV pink"},
+    { "id": 6, "nombre": "Air Jordan 1 travis scott", "precio": 6500, "stock": 12, "descripcion": "Un pedido especial para el famoso cantante de Rap Travis Scott se volvio viral en las redes y hoy es una zapatilla que rompe taquilla", "Cantidadcompradas":503, "imagen": "jordan 1 travis scott" }
+  ],
+
+ "pagos" : [
+    {"id": 1, "nombre": "Efectivo", "descuento": 0},
+    {"id": 2, "nombre": "Santander", "descuento": 25},
+    {"id": 3, "nombre": "Itau", "descuento": 30},
+    {"id": 4, "nombre": "OCA", "descuento": 15}
+  
+]
+}
